@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -12,14 +11,14 @@
     }
 
     header {
-      background-color: #a9745b; /* coklat susu gelap */
+      background-color: #110586; /* coklat susu gelap */
       color: white;
       padding: 30px 0;
       text-align: center;
     }
 
     nav {
-      background-color: #c8a98d; /* coklat susu medium */
+      background-color: #87cefa; /* biru medium */
       display: flex;
       justify-content: center;
     }
@@ -33,7 +32,7 @@
     }
 
     nav a:hover, .dropdown:hover .dropbtn {
-      background-color: #a9745b;
+      background-color: #110586;
       border-radius: 5px;
     }
 
@@ -82,7 +81,7 @@
     }
 
     button {
-      background: #a9745b;
+      background: #110586;
       color: white;
       padding: 8px 14px;
       border: none;
@@ -111,9 +110,9 @@
 
   <nav>
     <a href="#" onclick="showPage('beranda')">Beranda</a>
-    <a href="#" onclick="showPage('tentang')">Tentang Saya</a>
-    <a href="#" onclick="showPage('jadwal')">Jadwal Pelajaran</a>
-    <a href="#" onclick="showPage('syair')">Syair Lagu</a>
+    <a href="tentang anita.html"showPage('tentang')">Tentang Saya</a>
+    <a href="Jadwal Pelajaran.html"showPage('jadwal')">Jadwal Pelajaran</a>
+    <a href="lirik lago.html"showPage('syair')">Syair Lagu</a>
     <div class="dropdown">
       <a href="#" class="dropbtn">Menghitung ▼</a>
       <div class="dropdown-content">
@@ -156,14 +155,21 @@
     <div class="card">
       <h2>Menghitung Luas Persegi</h2>
       <p>Masukkan panjang sisi:</p>
-          </div>
+      <input type="number" id="sisi" placeholder="Sisi">
+      <button onclick="hitungLuas()">Hitung</button>
+      <p id="hasilLuas"></p>
+    </div>
   </section>
 
   <section id="volume">
     <div class="card">
       <h2>Menghitung Volume Kotak</h2>
       <p>Masukkan panjang, lebar, tinggi:</p>
-
+      <input type="number" id="panjang" placeholder="Panjang">
+      <input type="number" id="lebar" placeholder="Lebar">
+      <input type="number" id="tinggi" placeholder="Tinggi">
+      <button onclick="hitungVolume()">Hitung</button>
+      <p id="hasilVolume"></p>
     </div>
   </section>
 
@@ -174,8 +180,20 @@
       document.getElementById(pageId).classList.add("active");
     }
 
-   
-      </script>
+    function hitungLuas() {
+      let sisi = document.getElementById("sisi").value;
+      let hasil = sisi * sisi;
+      document.getElementById("hasilLuas").innerText = "Luas = " + hasil;
+    }
+
+    function hitungVolume() {
+      let p = document.getElementById("panjang").value;
+      let l = document.getElementById("lebar").value;
+      let t = document.getElementById("tinggi").value;
+      let hasil = p * l * t;
+      document.getElementById("hasilVolume").innerText = "Volume = " + hasil;
+    }
+  </script>
 
 </body>
 </html>
